@@ -4,8 +4,8 @@ import 'package:http/http.dart' as http;
 import 'package:dictionary_app/dictionary_model.dart';
 
 class ApiServices {
-  String baseurl = "https://api.dictionaryapi.dev/api/v2/entries/en/";
-  Future <DictionaryModel?> fetchData (String word) async {
+  static String baseurl = "https://api.dictionaryapi.dev/api/v2/entries/en/";
+  static Future <DictionaryModel?> fetchData (String word) async {
     Uri url = Uri.parse("$baseurl$word");
     final response = await http.get(url);
     try {
